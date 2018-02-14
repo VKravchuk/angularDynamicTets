@@ -10,7 +10,7 @@ import { TestComponent2Component } from '../test-component-2/test-component-2.co
 })
 export class DynamicContainerComponent implements OnInit {
 
-  _componentsList = [];
+  private _componentsList = [];
 
   @Input() set componentItem(newComponentId) {
     this._componentsList.push(newComponentId);
@@ -19,12 +19,9 @@ export class DynamicContainerComponent implements OnInit {
   }
 
   constructor(
-    @Inject(AddDynamicComponentService) addDynamicComponentService,
-    @Inject(ViewContainerRef) viewContainerRef
-  ) {
-    this.addDynamicComponentService = addDynamicComponentService;
-    this.viewContainerRef = viewContainerRef;
-  }
+    @Inject(AddDynamicComponentService) private addDynamicComponentService,
+    @Inject(ViewContainerRef) private viewContainerRef
+  ) {}
 
   ngOnInit() {
   }

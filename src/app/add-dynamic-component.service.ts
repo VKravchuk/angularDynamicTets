@@ -3,9 +3,9 @@ import { ComponentFactoryResolver, Inject, Injectable } from '@angular/core';
 @Injectable()
 export class AddDynamicComponentService {
 
-  constructor(@Inject(ComponentFactoryResolver) factoryResolver) {
-    this.factoryResolver = factoryResolver;
-  }
+  private rootViewContainer;
+
+  constructor(@Inject(ComponentFactoryResolver) private factoryResolver) { }
 
   setRootViewContainerRef(viewContainerRef) {
     this.rootViewContainer = viewContainerRef;
