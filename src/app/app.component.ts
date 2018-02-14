@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  componentItem = null;
+
+
+  onComponentClick(e) {
+    console.log(e);
+    this.componentItem = e;
+  }
 }

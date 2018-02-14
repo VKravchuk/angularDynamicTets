@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-dash-reports App', () => {
+describe('angular-dynamic-test App', () => {
   let page: AppPage;
 
   beforeEach(() => {
